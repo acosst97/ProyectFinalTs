@@ -1,0 +1,43 @@
+<div class="main-container">
+    <app-navbar></app-navbar>
+    <div class="filter card.filtered-out" [formGroup]="filtroForm">
+      Ingresa para buscar tu Cancion
+      <input type="text" id="searchInput" placeholder="Buscar por título..." formControlName="searchTerm">
+      <select id="categoryFilter" formControlName="categoriaSeleccionada">
+        <option value="">Todas las categorías</option>
+        <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria | titlecase }}</option>
+      </select>
+    </div>
+  
+    <div class="main-section">
+      <div class="carousel-container">
+        <button
+          *ngFor="let cancion of cancionesFiltradas"
+          class="card mb-3"
+          [attr.data-category]="cancion.categoria"
+          [attr.data-key]="cancion._id"
+          [attr.data-title]="cancion.titulo"
+          [attr.data-image]="'http://localhost:3000/' + cancion.imagen"
+          (click)="mostrarModal(cancion)"
+        >
+          <img [src]="'http://localhost:3000/' + cancion.imagen" class="card-img-top" [alt]="'Portada de ' + cancion.titulo">
+          <div class="card-body">
+            <h5 class="card-title">{{ cancion.titulo }}</h5>
+            <p class="card-text">{{ cancion.descripcion }}</p>
+            <p class="card-text"><small class="text-body-secondary">Última actualización hace unos minutos</small></p>
+          </div>
+        </button>
+      </div>
+    </div>
+  
+
+  </div>
+  <app-footer></app-footer>
+  <div #modalEnviado id="modal-enviado" class="modal-enviado hidden">
+    <div class="modal-content">
+      <span class="close" (click)="modalEnviado.classList.add('hidden')">&times;</span>
+      <img [src]="modalImageUrl" alt="Imagen ampliada">
+      <h2>{{ modalTitle }}</h2>
+      <p>{{ modalDescription }}</p>
+    </div>
+  </div>

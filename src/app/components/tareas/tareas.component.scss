@@ -1,0 +1,165 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    background-color: #f4f6f8; /* Un fondo claro */
+  }
+  
+  .form-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 490px; /* Ancho del formulario */
+    margin-bottom: 30px;
+    background: #101944
+  }
+  
+  .form-card h2 {
+    text-align: center;
+    color: #dfdfdf;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #dfdfdf;
+    font-weight: bold;
+  }
+  
+  .form-group input[type="text"],
+  .form-group textarea,
+  .form-group select,
+  .form-group input[type="date"],
+  .form-group input[type="file"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .form-group textarea {
+    min-height: 80px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+  
+  .primary-button,
+  .secondary-button,
+  .edit-button,
+  .delete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .primary-button {
+    background-color: #007bff; /* Azul */
+  }
+  
+  .primary-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .secondary-button {
+    background-color: #6c757d; /* Gris */
+  }
+  
+  .secondary-button:hover {
+    background-color: #545b62;
+  }
+  
+  .divider {
+    border: 1px solid #eee;
+    margin: 30px 0;
+    width: 100%;
+  }
+  
+  .table-container {
+    width: 100%;
+    overflow-x: auto; /* Para tablas grandes en pantallas pequeñas */
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+  
+  .task-table th,
+  .task-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .task-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .task-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .actions {
+    white-space: nowrap; /* Evita que los botones se rompan en varias líneas */
+  }
+  
+  .edit-button {
+    background-color: #28a745; /* Verde */
+    margin-right: 5px;
+  }
+  
+  .edit-button:hover {
+    background-color: #1e7e34;
+  }
+  
+  .delete-button {
+    background-color: #dc3545; /* Rojo */
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  .priority-high {
+    color: #dc3545; /* Rojo */
+    font-weight: bold;
+  }
+  
+  .priority-medium {
+    color: #ffc107; /* Amarillo/Ámbar */
+    font-weight: bold;
+  }
+  
+  .priority-low {
+    color: #28a745; /* Verde */
+    font-weight: bold;
+  }
+
+  #form-main{
+    .cont{
+        padding: 40px 20px;
+    }
+  }

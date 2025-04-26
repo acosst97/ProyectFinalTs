@@ -1,1 +1,257 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+:root {
+  --primary-color: #153c66;
+  --secondary-color: #b1bfca;
+  --accent-color: #ffc107;
+  --custom-blue: #3498db;
+  --custom-green: #2ecc71;
+  --custom-gray: #f3f3f3;
+  --text-primary: #212529;
+  --text-secondary: #636c72;
+  --background-light: #ffffff;
+  --background-dark: #343a40;
+  --border-color: #299e77be; /* o el color que quieras para la animación del borde */
+}
+
+
+.main-container nav  ul{
+  flex-direction: row;
+  gap: 30px;
+  font-size: 24px;
+}
+.main-container nav  .logo{
+ background: url(/src/harvin.svg) no-repeat center / 36px;
+ height: 100%;
+
+}
+.main-container a {
+  color: white;
+}
+.main-container a:hover {
+  color: rgb(78, 184, 46);
+}
+.main-container a:focus {
+  color: rgb(32, 219, 233);
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  background-image: linear-gradient(to right, rgb(19, 29, 32), rgb(23, 56, 117));
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+}
+
+/*FOOTER*/
+footer {
+  background-image: linear-gradient(to right,  #122929); 
+  position: sticky;
+  color: rgb(247, 247, 247);
+}
+
+
+
+.main-section {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex; 
+  flex-direction: column;
+  height: auto; 
+  padding: 15px; 
+  overflow-x: auto;
+}
+
+.main-container .filter {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.filter {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+}
+
+.filter input[type="text"],
+.filter select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+  animation: scroll-left 45s linear infinite;
+  justify-content: flex-end;
+  padding-bottom: 20px; 
+}
+
+.carousel-container img {
+  width: 100%; 
+  height: auto;
+  display: block; 
+  border-radius: 5px 5px 0 0; 
+  object-fit: cover; 
+  max-height: 150px; 
+}
+
+.card {
+  margin-right: 30px; 
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0.8;
+  transform: scale(1); 
+  cursor: pointer;
+  width: 250px; 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.card:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1.1); 
+}
+
+.card-body {
+  padding: 10px;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; 
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.card-text small {
+  color: #777;
+}
+
+.main-section::before,
+.main-section::after {
+  content: "";
+  position: absolute;
+  top: 125px; /* Ajustamos la posición vertical */
+  bottom: 20px; /* Ajustamos la posición vertical */
+  width: 50px; /* Reducimos el ancho del efecto de desvanecimiento */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.main-section::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(33 68 40), rgba(255, 255, 255, 0));
+}
+
+.main-section::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(33 68 40), rgba(255, 255, 255, 0));
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% + (250px + 30px) * -1)); /* Ajustamos el desplazamiento */
+  }
+}
+
+app-footer {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: auto; /* Empuja el footer hacia la parte inferior */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  #modal-enviado {
+    display: none; 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(30 64 92);
+    color: white;
+    padding: 20px;
+    border-radius: 40px;
+    z-index: 1000; 
+    height: 100vh;
+  }
+  .card.filtered-out {
+    display: none;
+}

@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Fecha de Creación</th>
+        <th scope="col">Fecha de Actualización</th>
+        <th scope="col">Versión</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for (usuario of usuarios; track $index) {
+      <tr >
+        <th scope="row">{{ $index + 1 }}</th>
+        <!-- <td>{{ usuario._id }}</td> -->
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.correoElectronico }}</td>
+        <td>{{ usuario.rol }}</td>
+        <td>{{ usuario.createdAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ usuario.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ usuario.__v }}</td>
+      </tr>
+    }
+    </tbody>
+  </table>

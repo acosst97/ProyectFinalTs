@@ -1,0 +1,26 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
+})
+export class NavbarComponent {
+
+
+   http = inject(HttpClient)
+
+
+
+
+  
+ngOnInit() {
+ 
+
+}
+
+}
