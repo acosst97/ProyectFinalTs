@@ -33,7 +33,7 @@ export class AuthService {
 
   startTokenExpirationTimer(): void {
     this.stopTokenExpirationTimer();
-    // console.log('AuthService: Iniciando el temporizador de verificación del token.'); 
+
     this.intervalSubscription = interval(this.tokenCheckInterval).subscribe(() => {
       this.checkTokenExpiration();
     });

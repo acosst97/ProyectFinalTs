@@ -10,18 +10,18 @@ import { TareasComponent } from './components/tareas/tareas.component';
 export const routes: Routes = [
     { path: '', redirectTo: '/galeria', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'navbar', component: NavbarComponent }, // Este parece ser un navbar fuera del dashboard
+    { path: 'navbar', component: NavbarComponent }, 
     { path: 'galeria', component: GaleriaComponent },
     { path: 'home', component: HomeComponent },
     {
       path: 'dashboard',
       component: DashBoardComponent,
       children: [
-        { path: '', redirectTo: 'usuarios', pathMatch: 'full' }, // Redirige a /dashboard/usuarios por defecto
+        { path: '', redirectTo: 'usuarios', pathMatch: 'full' }, 
         { path: 'usuarios', component: UsuariosComponent },
         { path: 'tareas', component: TareasComponent },
-        // Puedes agregar más rutas hijas aquí para otras secciones del dashboard
+        
       ]
     },
-    { path: 'dashBoard', redirectTo: '/dashboard' } // Redirige la ruta duplicada
+    { path: 'dashBoard', redirectTo: '/dashboard' } 
   ];

@@ -23,10 +23,10 @@ export class ModalComponent {
 
 
   cerrarModal(event: any) {
-    if (event.target.id === 'cierre') { // Solo cierra si el clic proviene del botón de cierre
+    if (event.target.id === 'cierre') { 
       this.showModal = false;
       this.onClose.emit();
-      this.destroy$.next();  // Evento de cierre
+      this.destroy$.next();  
     }
   }
 

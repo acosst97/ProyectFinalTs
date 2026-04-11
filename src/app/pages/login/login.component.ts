@@ -70,7 +70,6 @@ generateToken(length: number = 32): string {
   return token;
 }
 login() {
-
   if (this.loginForm.valid) {
     this.userSrv.loginUsuario(this.loginForm.value).subscribe(
       (response) => {
